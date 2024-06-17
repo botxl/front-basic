@@ -37,4 +37,31 @@ m1.forEach((val, key) => console.log(`${key} -> ${val}`));
 console.log(m1.keys()); // [Map Iterator] { 'key1', 'key2', 'key3' }
 console.log(m1.values()); // [Map Iterator] { 'val1', 'val2', 'val3' }
 
-// 选择Object还是选择Map?
+/**
+ * ==========================Set==================================
+ */
+const s = new Set();
+s.add("a").add("b");
+console.log(s.has("a")); // true
+console.log(s.size); // 2
+s.delete("a");
+console.log(s); // Set(1) { 'b' }
+s.clear();
+console.log(s); // Set(0) {}
+s.add("v1").add("v2").add("v3");
+for (let value of s.values()) {
+  // v1
+  // v2
+  // v3
+  console.log(value);
+}
+for (let pair of s.entries()) {
+  // [ 'v1', 'v1' ]
+  // [ 'v2', 'v2' ]
+  // [ 'v3', 'v3' ]
+  console.log(pair);
+}
+// v1 -> v1
+// v2 -> v2
+// v3 -> v3
+s.forEach((val, dupVal) => console.log(`${val} -> ${dupVal}`));
